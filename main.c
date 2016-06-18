@@ -97,6 +97,8 @@ int main(void)
 
 		}
 	}
+	
+	matrix_destroy(&matrix);
 
 	return 0;
 }
