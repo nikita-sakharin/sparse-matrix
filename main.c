@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <complex.h>
 #include <math.h>
+#include <complex.h>
 #include <stdbool.h>
 #include <ctype.h>
 #include <string.h>
@@ -43,14 +43,14 @@ int main(void)
 			long double complex num = read_complex();
 			if (num != num)
 			{
-				puts("Error was detected.\n");
+				puts("Error reading was detected.\n");
 				continue;
 			}
 
 			int result = matrix_elem_set(matrix, i, j, num);
 			if (result == EOF)
 			{
-				puts("Error was detected.\n");
+				puts("Error seting was detected.\n");
 				continue;
 			}
 
@@ -67,7 +67,7 @@ int main(void)
 			long double complex num = matrix_elem_get(matrix, i, j);
 			if (num != num)
 			{
-				puts("Error was detected.\n");
+				puts("Error geting was detected.\n");
 				continue;
 			}
 
@@ -79,7 +79,7 @@ int main(void)
 
 		case 'M':
 		{
-			matrix_sum_max_row_fprint(stdout, "%zu %Lf%+Lfi\n", matrix);
+			matrix_sum_max_row_fprint(stdout, "row = %zu, sum = %5.2Lf%+5.2Lfi\n", matrix);
 			break;
 		}
 
@@ -97,8 +97,6 @@ int main(void)
 
 		}
 	}
-	
-	matrix_destroy(&matrix);
 
 	return 0;
 }
@@ -129,7 +127,7 @@ long double complex read_complex(void)
 		{
 			temp[j++] = temp[i];
 		}
-		else if (!isblank(temp[i]))
+		else if (!isspace(temp[i]))
 		{
 			return NAN + NAN * I;
 		}
