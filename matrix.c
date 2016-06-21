@@ -14,7 +14,8 @@ struct pair
 
 struct matrix
 {
-	size_t row_count, *row;
+	size_t row_count;
+	size_t *row;
 	Pair *data;
 };
 
