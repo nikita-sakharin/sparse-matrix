@@ -98,6 +98,11 @@ int main(void)
 		}
 	}
 
+	if (matrix_destroy(&matrix) == EOF)
+	{
+		puts("Error destroing.\n");
+	}
+
 	return 0;
 }
 
