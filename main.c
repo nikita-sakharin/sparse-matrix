@@ -106,7 +106,7 @@ int main(void)
 	return 0;
 }
 
-#define N 65536u
+#define N 65535u
 
 long double complex read_complex(void)
 {
